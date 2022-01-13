@@ -2,7 +2,7 @@
 ### autor: Marcos S. Medeiros
 ### Data: 12 de janeiro de 2022
 
-Exemplo com visualização de outputs em: ![RPubs](https://rpubs.com/msrcos3s/estimadordecolapso)
+Exemplo com visualização de outputs em: rpubs.com/msrcos3s/estimadordecolapso
 
 ### Sinopse
 
