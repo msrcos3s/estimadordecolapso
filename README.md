@@ -66,7 +66,7 @@ Xem=(75-β0)/β1
 
 O Xem corresponde ao número de dias restantes para que 75% dos leitos sejam ocupados, com base na regressão linear simples das últimas 10 observações, a partir do marco zero (X0).
 
-O modelo de regressão linear deve ser atualizado constantemente para que se tenha o dimensionamento da velocidade de aceleração ou desaceleração da taxa de ocupação de leitos. Quando o EM tende a ser distante, significa que a contingência foi superada; quando tende a ser próxima, demanda ações do gestor público.
+O modelo de regressão linear deve ser atualizado constantemente para que se tenha o dimensionamento da aceleração ou desaceleração da taxa de ocupação de leitos. Quando o EM aumenta, significa que o risco de colapso está sendo afastado; quando diminui, exige tempo de resposta mais rápido do gestor público.
 
 **O gestor pode ajustar o nível Med3 para percentuais mais mais altos ou mais baixos de ocupação, bastando adaptar o modelo**. 
 
