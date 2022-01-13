@@ -74,7 +74,7 @@ O modelo de regressão linear deve ser atualizado constantemente para que se ten
 
 Utilizaremos como exemplo os dados públicos do Estado de São Paulo, disponíveis na Fundação [SEADE](https://www.seade.gov.br/coronavirus) e a contingência-exemplo o aumento da ocupação de leitos em decorrência de complicações respiratórias, no período de 10 dias compreendido entre 03/01/2022 e 12/01/2022.
 
-A escolha da base da demonstração deve-se simplesmente ao fato de tratar-se de fonte de informação conviável e disponibilizada publicamente, com quantidade de dados coletados relevantes e suficientes para o exemplo apresentado. 
+A escolha da base da demonstração deve-se simplesmente ao fato de tratar-se de fonte de informação confiável e disponibilizada publicamente, com quantidade de dados coletados relevantes e suficientes para o exemplo apresentado. 
 
 Utilizaremos R e RStudio, com script em RMarkdown e exportado em Knit para disponibilização pública em RPubs e GitHub.
 
