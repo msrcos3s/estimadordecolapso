@@ -1,16 +1,16 @@
-
 # Estimador de Colapso de Medeiros
 ### autor: Marcos S. Medeiros
 ### Data: 12 de janeiro de 2022
 
+Exemplo com visualização de outputs em: ![RPubs](https://rpubs.com/msrcos3s/estimadordecolapso)
 
 ### Sinopse
 
-O Estimador de Colapso de Medeiros (EM) é um método em forma de ferramenta estatística inferencial de regressão linear simples desenvolvido em R proposto por Marcos S. Medeiros que prevê a data estimada do colapso do sistema de atendimento de um sistema de saúde pública com base na tendência de evolução positiva da taxa de ocupação de leitos na rede atendimento de saúde dos últimos 10 dias, em face de qualquer contingência epidemiológica, a fim de possibilitar ações do gestor público na tomada de decisões para o enfrentamento da contingência.
+O Estimador de Colapso de Medeiros (EM) é um método em forma de ferramenta estatística inferencial de regressão linear simples desenvolvido em R proposto por Marcos S. Medeiros que prevê a data estimada do colapso do sistema de atendimento de um sistema de saúde pública com base na tendência de evolução positiva da taxa de ocupação de leitos na rede de atendimento de saúde dos últimos 10 dias, em face de qualquer contingência epidemiológica, a fim de possibilitar ações do gestor público na tomada de decisões para o enfrentamento da contingência.
 
 O presente trabalho visa dar publicidade ao método, possibilitando seu uso por quaisquer interessados, de forma livre e gratuita, em especial pelos gestores de localidades em desenvolvimento ou com carência de pessoal na área técnica.
 
-Embora modesta, a presente apresentação faz parte de um dos requisitos exigidos pela JHU como Capstone Project (trabalho de conclusão de curso - TCC) para a obtenção do Título de Especialização em Data Science ministrado pela plataforma Coursera. Decidi, como forma de gratidão, elaborar a versão em português e, igualmente, disponibilizá-la. 
+Embora modesta, a presente apresentação faz parte de um dos requisitos exigidos pela JHU como Capstone Project (trabalho de conclusão de curso TCC) para a obtenção do Título de Especialização em Data Science ministrado pela plataforma Coursera. Decidi, como forma de gratidão, elaborar a versão em português e, igualmente, disponibilizá-la. 
 
 ### Convenções 
 
@@ -68,7 +68,7 @@ O Xem corresponde ao número de dias restantes para que 75% dos leitos sejam ocu
 
 O modelo de regressão linear deve ser atualizado constantemente para que se tenha o dimensionamento da aceleração ou desaceleração da taxa de ocupação de leitos. Quando o EM aumenta, significa que o risco de colapso está sendo afastado; quando diminui, exige tempo de resposta mais rápido do gestor público.
 
-**O gestor pode ajustar o nível Med3 para percentuais mais mais altos ou mais baixos de ocupação, bastando adaptar o modelo**. 
+**O gestor pode ajustar o nível Med3 para percentuais mais altos ou mais baixos de ocupação, bastando adaptar o modelo**. 
 
 #### Calculando o Estimador de Colapso de Medeiros em R a partir de uma base de dados de saúde pública. 
 
@@ -81,7 +81,7 @@ Utilizaremos R e RStudio, com script em RMarkdown e exportado em Knit para dispo
 #### Preparando os dados para a análise
 
 Carregando pacotes do R 
-```{r cars}
+```{r}
 library(ggplot2)
 library(reshape2)
 library(grid)
@@ -91,6 +91,7 @@ library(lubridate)
 
 Download de dados
 ```{r}
+
 if(!file.exists("./plano_sp_leitos_internacoes.csv")) {
         fileURL <- "https://github.com/seade-R/dados-covid-sp/blob/master/data/plano_sp_leitos_internacoes.csv"
         download.file(fileURL, "plano_sp_leitos_internacoes.csv")
@@ -181,9 +182,11 @@ Caso a data atual seja o 10º dia de observação (X10) e estiver incluída no m
 
 EM= X10 -10 + Xem.
 
+No presente caso, a última observação ocorreu no dia anterior. É necessário ajustar a fórmula para -1 dia.
+
 Assim, em R, teremos
 ```{r}
-today()-10+28
+today()-10+28-1
 ```
 Podemos inferir, com base no modelo atual de regressão linear, que o EM é 30 de janeiro de 2022 para Med3-75. 
 
