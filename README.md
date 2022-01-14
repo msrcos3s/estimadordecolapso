@@ -118,7 +118,7 @@ sub_data <- subset(data_raw,internacoes_ultimo_dia>0,select=c("datahora","nome_d
 ## é importante observar e reproduzir fielmente as eventuais distorções de caracteres das variáveis devido à grafia com acentuação. 
 ### note que foi utilizada data retroativa a 10 dias da atual (inclusive) para obter-se as 10 últimas medições diferentes de zero.
 
-sub_data_SP <- sub_data[which(sub_data$nome_drs=='Estado de SÃ£o Paulo' & sub_data$datahora>="2022-01-03"), ]
+sub_data_SP <- sub_data[which(sub_data$nome_drs=='Estado de SÃ£o Paulo' & sub_data$datahora>="2022-01-03" & sub_data$datahora<="2022-01-12"), ]
 
 SP_10 <- sub_data_SP[1:10,]
 
